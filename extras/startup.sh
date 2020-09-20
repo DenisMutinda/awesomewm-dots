@@ -6,8 +6,9 @@ picom -f --config ~/.config/picom/picom.conf &
 feh --bg-scale ~/.config/extras/walls/animelandscape.jpg &
 
 while true;do
-	xsetroot -name "$( date +"%F %R" )"
-	sleep 1m    # Update time every minute
+#	xsetroot -name "`date` `uptime | sed 's/.*,//'`"
+	xsetroot -name "$( date +"%a %F %r" )"
+	sleep 1s   # Update time every minute
 done &
 
 while true;do
