@@ -1,19 +1,53 @@
 --- dwm.c
 +++ dwm.c
-@@ -92,7 +92,7 @@ struct Client {
- 	int basew, baseh, incw, inch, maxw, maxh, minw, minh;
- 	int bw, oldbw;
- 	unsigned int tags;
--	int isfixed, iscentered, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
-+	int isfixed, iscentered, isfloating, isalwaysontop, isurgent, neverfocus, oldstate, isfullscreen;
- 	Client *next;
- 	Client *snext;
- 	Monitor *mon;
-@@ -220,6 +220,7 @@ static void bstack(Monitor *);
- static void togglebar(const Arg *arg);
- static void togglebartrans(const Arg *arg);
- static void togglefloating(const Arg *arg);
-+static void togglealwaysontop(const Arg *arg);
- static void toggletag(const Arg *arg);
- static void toggleview(const Arg *arg);
- static void unfocus(Client *c, int setfocus);
+@@ -50,7 +50,6 @@
+ #define INTERSECT(x,y,w,h,m)    (MAX(0, MIN((x)+(w),(m)->wx+(m)->ww) - MAX((x),(m)->wx)) \
+                                * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
+ #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
+-#define HIDDEN(C)               ((getstate(C->win) == IconicState))
+ #define LENGTH(X)               (sizeof X / sizeof X[0])
+ #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
+ #define WIDTH(X)                ((X)->w + 2 * (X)->bw)
+@@ -730,37 +702,16 @@ drawbar(Monitor *m)
+ 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+ 
+ 	if ((w = m->ww - sw - x) > bh) {
+-		if (n > 0) {
+-			int remainder = w % n;
+-			int tabw = (1.0 / (double)n) * w + 1;
+-			for (c = m->clients; c; c = c->next) {
+-				if (!ISVISIBLE(c))
+-					continue;
+-				if (m->sel == c)
+-					scm = SchemeSel;
+-				else if (HIDDEN(c))
+-					scm = SchemeHid;
+-				else
+-					scm = SchemeNorm;
+-				drw_setscheme(drw, scheme[scm]);
+-
+-				if (remainder >= 0) {
+-					if (remainder == 0) {
+-						tabw--;
+-					}
+-					remainder--;
+-				}
+-				drw_text(drw, x, 0, tabw, bh, lrpad / 2, c->name, 0);
+-				x += tabw;
+-			}
++		if (m->sel) {
++			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
++			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
++			if (m->sel->isfloating)
++				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+ 		} else {
+ 			drw_setscheme(drw, scheme[SchemeNorm]);
+ 			drw_rect(drw, x, 0, w, bh, 1, 1);
+ 		}
+ 	}
+-
+-	m->bt = n;
+-	m->btw = w;
+ 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
+ }
+ 
