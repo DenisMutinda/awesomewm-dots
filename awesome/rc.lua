@@ -45,7 +45,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "/themes/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -568,4 +568,4 @@ beautiful.useless_gap = 5
 
 -- Autostart 
 awful.spawn.with_shell("picom -f --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("feh --bg-fill --randomize ~/.config/extras/walls/")
+-- awful.spawn.with_shell("feh --bg-fill --randomize ~/.config/extras/walls/")
