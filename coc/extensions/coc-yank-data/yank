@@ -1,0 +1,205 @@
+b2afc5d7360ba8c15b7f1503328ae701|file:///home/kv3ldulf/.config/nvim/init.vim|28|1|V|vim
+	set number
+e6b2edcfad91144e848a0aaf520e7243|file:///home/kv3ldulf/.config/nvim/init.vim|28|1|V|vim
+	syntax enable
+	filetype plugin on
+91505a66787916de0d00b3ba9b0548da|file:///home/kv3ldulf/.config/nvim/general/settings.vim|4|1|V|vim
+	syntax enable
+a8f0826c1e791f5e191ad321ef00f705|file:///home/kv3ldulf/.config/nvim/general/settings.vim|26|11|v|vim
+	                              " Line numbers
+	set relativenumber
+	set cursorline                          " Enable highlighting of the current line
+	set background=dark                     " tell vim what the background color looks like
+	set showtabline=2                       " Always show tabs
+	set noshowmode    
+29ba3b9d93fd56dedf71aceff7678fcd|file:///home/kv3ldulf/.bashrc|2|1|v|sh
+	# ~/.bashrc
+9465a97d14d52cdbc4b0d408e718f8b3|file:///home/kv3ldulf/.bashrc|2|1|v|sh
+	# ~/.bashrc
+	#
+	
+	# If not running interactively, don't do anything
+	[[ $- != *i* ]] && return
+	
+	alias ls='ls --color=auto'
+	alias v='nvim'
+	alias vim='nvim'
+	PS1='[\u@\h \W]\$ '
+	
+	[ -f ~/.fzf.bash ] && source ~/.fzf.
+63ebd91a253f03eb72a2b3ff6ac8499c|file:///home/kv3ldulf/.config/nvim/plugged/colorizer/doc/Colorizer.txt|136|6|v|help
+	let g:colorizer_auto_color = 1
+	
+b3f6f7882a5140870563eabd39483ace|file:///home/kv3ldulf/.config/nvim/init.vim|5|30|v|vim
+	g-config/coc.vim
+b0833dd9df3a91af43d7036084d9be1e|file:///home/kv3ldulf/.config/nvim/vim-plug/plugins.vim|24|1|V|vim
+	Plug 'vim-airline/vim-airline-themes'
+07b88e85eb909677ff3b6347e71542cc|file:///home/kv3ldulf/.config/nvim/keys/mappings.vim|15|1|V|vim
+	" Space + e for explorer "
+	nnoremap <space>e :CocCommand explorer<CR>
+616f2f421515035c60692d3a04ebde5f|file:///home/kv3ldulf/.config/nvim/keys/mappings.vim|10|2|V|vim
+	 edfsdf
+858d6db459c4a73d0af47d2c0ab59b08|file:///home/kv3ldulf/.config/nvim/coc-settings.json|33|3|V|json
+	\     'floating-position': 'center-top',
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingLeftside': {
+	\     'position': 'floating',
+	\     'floating-position': 'left-center',
+	\     'floating-width': 50,
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingRightside': {
+	\     'position': 'floating',
+	\     'floating-position': 'right-center',
+	\     'floating-width': 50,
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'simplify': {
+	\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+	\   }
+	\ }
+3463862e8da3aac1910df9ba24b5264d|file:///home/kv3ldulf/.config/nvim/coc-settings.json|19|3|V|json
+	  let g:coc_explorer_global_presets = {
+	\   '.vim': {
+	\     'root-uri': '~/.vim',
+	\   },
+	\   'tab': {
+	\     'position': 'tab',
+	\     'quit-on-open': v:true,
+	\   },
+	\   'floating': {
+	\     'position': 'floating',
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingTop': {
+	\     'position': 'floating',
+d63e0fc1c3104c7d9e57231ea814b64a|file:///home/kv3ldulf/.config/nvim/coc-settings.json|19|1|V|json
+	let g:coc_explorer_global_presets = {
+	\   '.vim': {
+	\     'root-uri': '~/.vim',
+	\   },
+	\   'tab': {
+	\     'position': 'tab',
+	\     'quit-on-open': v:true,
+	\   },
+	\   'floating': {
+	\     'position': 'floating',
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingTop': {
+	\     'position': 'floating',
+	\     'floating-position': 'center-top',
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingLeftside': {
+	\     'position': 'floating',
+	\     'floating-position': 'left-center',
+	\     'floating-width': 50,
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'floatingRightside': {
+	\     'position': 'floating',
+	\     'floating-position': 'right-center',
+	\     'floating-width': 50,
+	\     'open-action-strategy': 'sourceWindow',
+	\   },
+	\   'simplify': {
+	\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+	\   }
+	\ }
+afddeb155672140dd66a107cba3f0a5e|file:///home/kv3ldulf/.config/nvim/plug-config/coc.vim|157|1|V|vim
+	nmap <space>f :CocCommand explorer --preset floating<CR>
+673e475a8a7364e8261421d7e9bed8ce|file:///home/kv3ldulf/.config/nvim/coc-settings.json|23|4|V|json
+	    "<cr>": ["expandable?", "expand", "open"],
+970e60158827cbc988775998eda7e98b|file:///home/kv3ldulf/.config/nvim/coc-settings.json|23|12|v|json
+	 ["expandable?", ["expanded?", "collapse", "expand"], "open"]
+4e6cd9e96b21f1fa4f469f5465eb8b29|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# Avoid drawing shadows on dock/panel windows. This option is deprecated,
+ffa0a55011b6ebc2d66afebc2c00cb15|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# you should use the *wintypes* option in your config file instead.
+5146e2d1f40b0f3b204745f9d3dc2686|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# Don't draw shadows on drag-and-drop windows. This option is deprecated, 
+9fb53dc2504a5f76f0daa58be34e11fd|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# no-dnd-shadow = false
+c0f7e5cb2203f39471cd3e57c58d9a49|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# shadow-red = 0
+2ce941d265032e7e9d9773927ac2b342|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# shadow-blue = 0
+6356846d038400fbfac5a9a527eef60f|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# Deprecated, use 
+6891a83c78e909426ff728e96d8e8aad|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# instead.
+ffe19c1b0aa60c5b583b57aad874ccfd|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# Specify a list of conditions of windows that should have no shadow.
+a89aec24fb9f989b9334147897b96923|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	# examples:
+0496c81e137a42027a6f0513848c988a|file:///home/kv3ldulf/.config/picom/picom.conf|59|1|V|conf
+	#   shadow-exclude = "n:e:Notification";
+53e4d0775f932172f2284a7deb04bd1c|file:///home/kv3ldulf/.config/picom/picom.conf|56|1|V|conf
+	# shadow-offset-y = -15
+edda31a67b8f416d95e561ba491fe54a|file:///home/kv3ldulf/.config/picom/picom.conf|52|1|V|conf
+	# shadow-offset-x = -15
+b8a8f85dc3c2695b6ceecedd763a94d6|file:///home/kv3ldulf/.config/picom/picom.conf|45|1|V|conf
+	# shadow-radius = 12
+310cbe524c5c0170cdcdb4bc8fce98cf|file:///home/kv3ldulf/.config/picom/picom.conf|40|1|V|conf
+	# shadow = false
+ea3a1335c99286a4aa8b44721d820090|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# Specify a X geometry that describes the region in which shadow should not
+99564f8dcc200ccab9df1aa5749be5aa|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# be painted in, such as a dock window region. Use 
+6e289779e00e1b5a580260212579a2f3|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	#    shadow-exclude-reg = "x10+0+0"
+f4f671c62e8d7efc960000829249f763|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# for example, if the 10 pixels on the bottom of the screen should not have shadows painted on.
+faa650f8cd93c0d545bc4d914364467f|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# shadow-exclude-reg = "" 
+b6be318ec128b9931941c4dbb79872d2|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# Crop shadow of a window fully on a particular Xinerama screen to the screen.
+5ea506e9b7a9dbec8e3929c514de4fec|file:///home/kv3ldulf/.config/picom/picom.conf|65|1|V|conf
+	# xinerama-shadow-crop = false
+e89c78aa2078b50d95d9e82acb6d8a4a|file:///home/kv3ldulf/.config/picom/picom.conf|73|1|V|conf
+	# fading = false
+6343afd16367e3e4d47caf4ebc95bdfe|file:///home/kv3ldulf/.config/picom/picom.conf|76|1|V|conf
+	# fade-in-step = 0.028
+b71f648f53b167cc32afcf09316018a6|file:///home/kv3ldulf/.config/picom/picom.conf|79|1|V|conf
+	# fade-out-step = 0.03
+51995078a3d04245d307728b83ba84b3|file:///home/kv3ldulf/.config/picom/picom.conf|103|1|V|conf
+	# inactive-opacity = 1
+dd27608dc7836a0a2e3f6fa66e93f7db|file:///home/kv3ldulf/.config/picom/picom.conf|106|1|V|conf
+	# frame-opacity = 1.0
+4d61e3e197e61407e24415aea3b549a2|file:///home/kv3ldulf/.config/picom/picom.conf|112|1|V|conf
+	# inactive-opacity-override = true
+f9a16b79d89e70acf5ac3fcc4bb9fa44|file:///home/kv3ldulf/.config/picom/picom.conf|121|1|V|conf
+	# focus-exclude = []
+c832768374f4de7ea8f8b57d894ac008|file:///home/kv3ldulf/.config/picom/picom.conf|123|1|V|conf
+	  "class_g = 'Bar'",                    # lemonbar
+fda09212f8383ade704d92b6b296da03|file:///home/kv3ldulf/.config/picom/picom.conf|123|3|V|conf
+	  "class_g = 'slop'"                    # maim
+14e2cad82d3b3f22237c5906908e44a6|file:///home/kv3ldulf/.config/picom/picom.conf|154|1|V|conf
+	# blur-deviation = false
+	
+b72e52dba375a117c9dd11f864a7fbfd|file:///home/kv3ldulf/.config/picom/picom.conf|151|1|V|conf
+	# blur-method = 
+0ef92d7724db3ad6666ffa1b2b84b884|file:///home/kv3ldulf/.config/picom/picom.conf|153|1|V|conf
+	# Blur background of semi-transparent / ARGB windows. 
+c6809b52a04c2d57d28e8bf59179da7b|file:///home/kv3ldulf/.config/picom/picom.conf|153|1|V|conf
+	# Bad in performance, with driver-dependent behavior. 
+a17c1b14b987db7bcc45776dae048526|file:///home/kv3ldulf/.config/picom/picom.conf|153|1|V|conf
+	# The name of the switch may change without prior notifications.
+cf90b489aefcd256acd7c8ffe6f8eb20|file:///home/kv3ldulf/.config/picom/picom.conf|153|1|V|conf
+	# blur-background = true;
+ace150e9e1b256beecf06a7cae052c8c|file:///home/kv3ldulf/.config/picom/picom.conf|158|1|V|conf
+	# blur-background-frame = false;
+0d079f7160f2f3e45165320c170abdcf|file:///home/kv3ldulf/.config/picom/picom.conf|172|1|V|conf
+	  # requires: https://github.com/ibhagwan/picom
+bea0ad01eb853be8b6b10292714c3556|file:///home/kv3ldulf/.config/picom/picom.conf|173|3|V|conf
+	  #method = "kernel";
+de4825593996088141f30640e931e3a1|file:///home/kv3ldulf/.config/picom/picom.conf|174|3|V|conf
+	  # deviation = 1.0;
+c4f939229511a2d562cb18d2f49b9c49|file:///home/kv3ldulf/.config/picom/picom.conf|174|3|V|conf
+	  # kernel = "11x11gaussian";
+01a9d10f909fea2607147f95a61c9812|file:///home/kv3ldulf/.bashrc|21|1|V|sh
+	fortune &
+02d5d9268ee813ee53f130484782ce58|file:///home/kv3ldulf/.config/picom/picom.conf|23|1|V|conf
+	  #"class_g = 'TelegramDesktop'",
